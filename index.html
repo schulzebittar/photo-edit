@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Editing Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Before/After</h1>
-    <div class="slider-container">
-      <!-- The "After" or background image -->
-      <img src="2026_04_28_GAS_HOMME6657_after.jpg" alt="After" class="slider-image">
-  
-      <!-- The "Before" image container that gets resized -->
-      <div class="img-reveal">
-        <img src="2026_04_28_GAS_HOMME6657_before.jpg" alt="Before" class="slider-image">
+
+  <header>
+    <h1>Editing Services Portfolio</h1>
+    <p>Select a sample below to compare original vs. edited results</p>
+  </header>
+
+  <main class="container">
+    <!-- Main Comparison Stage -->
+    <section class="stage">
+      <h2 id="sampleTitle">Select a sample</h2>
+      
+      <div class="comparison-slider" id="sliderContainer">
+        <!-- After Image (Background) -->
+        <img id="imgAfter" src="" alt="Edited Photo">
+
+        <!-- Before Image (Clipped Overlay) -->
+        <img id="imgBefore" src="" alt="Original Photo" class="img-before">
+
+        <!-- Slider Line & Handle -->
+        <div class="slider-line" id="sliderLine">
+          <div class="slider-button"></div>
+        </div>
+
+        <!-- Range Input Control -->
+        <input type="range" min="0" max="100" value="50" class="slider-input" id="sliderInput">
       </div>
-  
-      <!-- The interactive native range input -->
-      <input type="range" min="0" max="100" value="50" class="slider-input" id="slider">
-  
-      <!-- Optional: Visual custom divider line and handle arrows -->
-      <div class="slider-button" id="slider-button"></div>
-    </div>
+    </section>
+
+    <!-- Thumbnail Gallery -->
+    <section class="gallery-section">
+      <h3>Samples</h3>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

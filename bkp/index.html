@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo editing sample</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Before/After</h1>
+    <div class="slider-container">
+      <!-- The "After" or background image -->
+      <img src="2026_04_28_GAS_HOMME6657_after.jpg" alt="After" class="slider-image">
+  
+      <!-- The "Before" image container that gets resized -->
+      <div class="img-reveal">
+        <img src="2026_04_28_GAS_HOMME6657_before.jpg" alt="Before" class="slider-image">
+      </div>
+  
+      <!-- The interactive native range input -->
+      <input type="range" min="0" max="100" value="50" class="slider-input" id="slider">
+  
+      <!-- Optional: Visual custom divider line and handle arrows -->
+      <div class="slider-button" id="slider-button"></div>
+    </div>
+</body>
+</html>
