@@ -127,24 +127,70 @@ header p {
 }
 
 /* Gallery Grid */
-.gallery-section h3 {
+.gallery-section {
+  width: 100%;
+}
+
+.gallery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 1rem;
+.slider-controls {
+  display: flex;
+  gap: 0.5rem;
 }
 
+.nav-btn {
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid #334155;
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.2s;
+}
+
+.nav-btn:hover {
+  background: #334155;
+  color: var(--accent-color);
+}
+
+/* Outer wrapper with hidden overflow */
+.gallery-slider-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  cursor: grab;
+}
+
+.gallery-slider-wrapper:active {
+  cursor: grabbing;
+}
+
+/* Moving inner track */
+.gallery-track {
+  display: flex;
+  gap: 1rem;
+  will-change: transform;
+  user-select: none;
+}
+
+/* Thumbnail Cards */
 .gallery-card {
+  flex: 0 0 160px; /* Fixed width per thumbnail */
+  aspect-ratio: 1;
   position: relative;
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: all 0.2s ease;
-  aspect-ratio: 1;
+  transition: border-color 0.2s, transform 0.2s;
   background: var(--card-bg);
 }
 
@@ -152,6 +198,7 @@ header p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
 
 .gallery-card.active {
@@ -164,11 +211,12 @@ header p {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.75);
   font-size: 0.75rem;
   padding: 0.4rem;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  pointer-events: none;
 }

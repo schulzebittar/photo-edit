@@ -36,10 +36,22 @@
     </section>
 
     <!-- Thumbnail Gallery -->
-    <section class="gallery-section">
-      <h3>Samples</h3>
-      <div class="gallery-grid" id="galleryGrid"></div>
+     <section class="gallery-section">
+        <div class="gallery-header">
+            <h3>Samples</h3>
+            <div class="slider-controls">
+                <button id="prevBtn" class="nav-btn" aria-label="Previous">◄</button>
+                <button id="nextBtn" class="nav-btn" aria-label="Next">►</button>
+            </div>
+        </div>
+
+    <!-- Outer container with hidden overflow -->
+        <div class="gallery-slider-wrapper" id="sliderWrapper">
+            <!-- Inner track that slides horizontally -->
+            <div class="gallery-track" id="galleryTrack"></div>
+        </div>
     </section>
+
   </main>
 
   <script src="script.js"></script>
