@@ -1,1 +1,0 @@
-node -e 'const fs=require("fs"); const files=fs.readdirSync("./img").filter(f=>f.endsWith("_before.jpg")).map(f=>({id: f.replace("_before.jpg",""), title: f.replace("_before.jpg","").replace(/_/g," ")})); fs.writeFileSync("images.json", JSON.stringify(files, null, 2));'
