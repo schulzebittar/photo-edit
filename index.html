@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photo Editing Portfolio</title>
+  <title>Photo Retouching</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <header>
-    <h1>Editing Services Portfolio</h1>
-    <p>Select a sample below to compare original vs. edited results</p>
   </header>
 
   <main class="container">
     <!-- Main Comparison Stage -->
+     <h1>Photo Retouching</h1>
+    <p>A selection of photo retouching samples for three distinct editorial & lifestyle campaigns made for Gas Bijoux, a French Maison of handcrafted fashion jewellery inspired by Mediterranean elements such as its light, sun, coast and sand.</p>
     <section class="stage">
       <h2 id="sampleTitle">Select a sample</h2>
       
@@ -53,6 +53,63 @@
     </section>
 
   </main>
+
+    <!-- Style Book Overlay Trigger & Panel -->
+  <button id="styleBookToggle" class="style-book-toggle" aria-label="Toggle Style Book">🎨 Style Book</button>
+
+  <div id="styleBookOverlay" class="style-book-overlay hidden">
+    <div class="style-book-content">
+      <div class="style-book-header">
+        <h2>Global Style Book & Theme Editor</h2>
+        <button id="closeStyleBook" class="close-btn">&times;</button>
+      </div>
+
+      <!-- Live Color Pickers -->
+      <div class="style-book-section">
+        <h3>Color Tokens (Live Preview)</h3>
+        <div id="colorSwatches" class="color-swatches-grid"></div>
+      </div>
+
+      <!-- Live Font Pickers -->
+      <div class="style-book-section">
+        <h3>Global Typography (Custom Google Fonts)</h3>
+        <div class="font-pickers-grid">
+          
+          <!-- Body Font Input -->
+          <div class="font-picker-card">
+            <label for="fontBodyCustom">Body Font</label>
+            <div class="font-input-group">
+              <input type="text" id="fontBodyCustom" class="style-input" placeholder="Type Google Font name (e.g. Inter, Roboto)...">
+              <button id="fontBodyCustomBtn" class="apply-font-btn">Apply</button>
+            </div>
+          </div>
+
+          <!-- Headings Font Input -->
+          <div class="font-picker-card">
+            <label for="fontHeadingsCustom">Headings Font (h1, h2, h3)</label>
+            <div class="font-input-group">
+              <input type="text" id="fontHeadingsCustom" class="style-input" placeholder="Type Google Font name (e.g. Oswald, Playfair Display)...">
+              <button id="fontHeadingsCustomBtn" class="apply-font-btn">Apply</button>
+            </div>
+          </div>
+
+          <!-- Paragraphs Font Input -->
+          <div class="font-picker-card">
+            <label for="fontParagraphsCustom">Paragraphs Font (p)</label>
+            <div class="font-input-group">
+              <input type="text" id="fontParagraphsCustom" class="style-input" placeholder="Type Google Font name (e.g. Lora, Open Sans)...">
+              <button id="fontParagraphsCustomBtn" class="apply-font-btn">Apply</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="style-book-section">
+        <button id="resetThemeBtn" class="reset-btn">Reset to Default Styles</button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
