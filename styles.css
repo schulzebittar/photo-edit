@@ -5,6 +5,7 @@
   --color-text-dark: #0c0c0c;
   --color-text-light: #f8fafc;
   --slider-pos: 50%;
+  --alpha-multiplier: 0.66;
 }
 
 * {
@@ -14,10 +15,16 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: var(--color-primary);
   color: var(--color-text-dark);
   padding: 2rem 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  color: var(--color-text-dark);
 }
 
 header {
@@ -46,8 +53,6 @@ header p {
 .stage {
   background: var(--color-secondary);
   padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 .stage h2 {
@@ -60,7 +65,6 @@ header p {
   width: 100%;
   max-height: 900px;
   aspect-ratio: 4 / 5;
-  border-radius: 8px;
   overflow: hidden;
   user-select: none;
   background-color: #000;
@@ -148,7 +152,6 @@ header p {
   background: var(--color-secondary);
   color: var(--color-text-dark);
   border: 1px solid var(--color-text-dark);
-  border-radius: 6px;
   width: 36px;
   height: 36px;
   cursor: pointer;
@@ -187,7 +190,6 @@ header p {
   flex: 0 0 160px; /* Fixed width per thumbnail */
   aspect-ratio: 1;
   position: relative;
-  border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
   border: 3px solid transparent;
@@ -204,7 +206,7 @@ header p {
 
 .gallery-card.active {
   border-color: var(--color-accent);
-  transform: scale(1.03);
+  transform: scale(1.03) translate(3px, 0px);
 }
 
 .gallery-card p {
@@ -212,7 +214,7 @@ header p {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgb(from var(--color-primary) r g b / var(--alpha-multiplier));
   font-size: 0.75rem;
   padding: 0.4rem;
   text-align: center;
@@ -251,7 +253,7 @@ header p {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, var(--alpha-multiplier));
   backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
