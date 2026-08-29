@@ -42,7 +42,7 @@ header p {
 }
 
 .container {
-  max-width: 720px;
+  max-width: 684px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -270,8 +270,8 @@ header p {
 
 /* Style Book Card */
 .style-book-content {
-  background: #0f172a;
-  color: #f8fafc;
+  background: #000;
+  color: #fff;
   width: 90%;
   max-width: 550px;
   max-height: 80vh;
@@ -289,6 +289,10 @@ header p {
   border-bottom: 1px solid #334155;
   padding-bottom: 0.75rem;
   margin-bottom: 1rem;
+}
+
+.style-book-section h2 {
+  color: var(--color-secondary);
 }
 
 .close-btn {
