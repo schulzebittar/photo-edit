@@ -5,84 +5,126 @@ document.addEventListener("DOMContentLoaded", () => {
   const imgAfter = document.getElementById("imgAfter");
   const sampleTitle = document.getElementById("sampleTitle");
   
-  const sliderWrapper = document.getElementById("sliderWrapper");
+  const campaignTrack = document.getElementById("campaignTrack");
   const galleryTrack = document.getElementById("galleryTrack");
+  const gallerySectionTitle = document.getElementById("gallerySectionTitle");
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
 
-  let imagesData = [];
+  let setsData = [];
+  let currentCampaignIndex = 0;
+  let currentCampaignImages = [];
   let currentOffset = 0;
   let singleSetWidth = 0;
-  let activeIndex = 0;
 
   // 1. Comparison Slider Control
   sliderInput.addEventListener("input", (e) => {
     sliderContainer.style.setProperty("--slider-pos", `${e.target.value}%`);
   });
 
-  // 2. Fetch Manifest & Build Infinite Gallery
+  // 2. Fetch Manifest
   async function loadGallery() {
     try {
       const response = await fetch("images.json");
-      imagesData = await response.json();
+      setsData = await response.json();
 
-      if (imagesData.length === 0) return;
+      if (!setsData || setsData.length === 0) return;
 
-      buildTrack();
-      selectImage(0);
+      buildCampaignPicker();
+      selectCampaign(0); // Load first campaign by default
 
     } catch (err) {
       console.error("Error loading images manifest:", err);
-      sampleTitle.textContent = "Error loading gallery.";
+      if (sampleTitle) sampleTitle.textContent = "Error loading gallery.";
     }
   }
 
-  function buildTrack() {
+  // 3. Build Top Campaign Picker Track
+  function buildCampaignPicker() {
+    campaignTrack.innerHTML = "";
+
+    setsData.forEach((set, index) => {
+      // Use the first image of the set as the cover image
+      const coverImg = set.images && set.images.length > 0 ? set.images[0].after : "";
+
+      const card = document.createElement("div");
+      card.classList.add("campaign-card");
+      card.dataset.campaignIndex = index;
+
+      card.innerHTML = `
+        <img class="campaign-card-img" src="${coverImg}" alt="${set.title}">
+        <div class="campaign-card-info">
+          <span class="campaign-card-title">${set.title}</span>
+          <span class="campaign-card-meta">${set.client || ''}</span>
+        </div>
+      `;
+
+      card.addEventListener("click", () => selectCampaign(index));
+      campaignTrack.appendChild(card);
+    });
+  }
+
+  // 4. Select Campaign & Filter Samples
+  function selectCampaign(index) {
+    currentCampaignIndex = index;
+    const selectedSet = setsData[index];
+    if (!selectedSet || !selectedSet.images) return;
+
+    currentCampaignImages = selectedSet.images;
+
+    // Highlight active campaign card
+    const campaignCards = campaignTrack.querySelectorAll(".campaign-card");
+    campaignCards.forEach((card, i) => {
+      card.classList.toggle("active", i === index);
+    });
+
+    if (gallerySectionTitle) {
+      gallerySectionTitle.textContent = `${selectedSet.title} — Samples`;
+    }
+
+    buildSampleTrack();
+    selectSample(0);
+  }
+
+  // 5. Build Bottom Gallery Track for Selected Campaign
+  function buildSampleTrack() {
     galleryTrack.innerHTML = "";
 
-    // Duplicate array 3 times to allow seamless infinite loop wrapping
-    const tripleData = [...imagesData, ...imagesData, ...imagesData];
+    // Duplicate array 3 times for infinite loop track
+    const tripleData = [...currentCampaignImages, ...currentCampaignImages, ...currentCampaignImages];
 
     tripleData.forEach((item, tripleIndex) => {
-      const realIndex = tripleIndex % imagesData.length;
+      const realIndex = tripleIndex % currentCampaignImages.length;
 
       const card = document.createElement("div");
       card.classList.add("gallery-card");
       card.dataset.realIndex = realIndex;
 
       card.innerHTML = `
-        <img src="img/${item.id}_after.jpg" alt="${item.title}" loading="lazy">
-        <p>${item.title}</p>
+        <img src="${item.after}" alt="Sample ${realIndex + 1}" loading="lazy">
       `;
 
-      card.addEventListener("click", () => selectImage(realIndex));
+      card.addEventListener("click", () => selectSample(realIndex));
       galleryTrack.appendChild(card);
     });
 
-    // Calculate total width of a single set of cards
     requestAnimationFrame(() => {
       const cardWidth = galleryTrack.children[0].offsetWidth;
-      const gap = 16; // 1rem gap
-      singleSetWidth = (cardWidth + gap) * imagesData.length;
+      const gap = 16;
+      singleSetWidth = (cardWidth + gap) * currentCampaignImages.length;
       
-      // Start in middle set to allow scrolling backward & forward
       currentOffset = -singleSetWidth;
       updateTrackPosition(false);
     });
   }
 
-  // 3. Infinite Track Scroll Logic
+  // 6. Infinite Track Scroll Logic
   function updateTrackPosition(animate = true) {
-    if (animate) {
-      galleryTrack.style.transition = "transform 0.3s ease-out";
-    } else {
-      galleryTrack.style.transition = "none";
-    }
+    galleryTrack.style.transition = animate ? "transform 0.3s ease-out" : "none";
     galleryTrack.style.transform = `translateX(${currentOffset}px)`;
   }
 
   function checkBoundary() {
-    // Wrap around silently without animation when passing set boundaries
     if (Math.abs(currentOffset) >= singleSetWidth * 2) {
       currentOffset += singleSetWidth;
       updateTrackPosition(false);
@@ -94,9 +136,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   galleryTrack.addEventListener("transitionend", checkBoundary);
 
-  // 4. Navigation Controls
-  const stepAmount = 176; // Card width (160px) + Gap (16px)
-
+  // Nav buttons
+  const stepAmount = 176;
   nextBtn.addEventListener("click", () => {
     currentOffset -= stepAmount;
     updateTrackPosition(true);
@@ -107,45 +148,23 @@ document.addEventListener("DOMContentLoaded", () => {
     updateTrackPosition(true);
   });
 
-  // 5. Mouse Drag to Scroll
-  let isDragging = false;
-  let startX = 0;
-  let startOffset = 0;
-
-  sliderWrapper.addEventListener("mousedown", (e) => {
-    isDragging = true;
-    startX = e.pageX;
-    startOffset = currentOffset;
-    galleryTrack.style.transition = "none";
-  });
-
-  window.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
-    const diff = e.pageX - startX;
-    currentOffset = startOffset + diff;
-    galleryTrack.style.transform = `translateX(${currentOffset}px)`;
-  });
-
-  window.addEventListener("mouseup", () => {
-    if (!isDragging) return;
-    isDragging = false;
-    checkBoundary();
-  });
-
-  // 6. Select Image and Highlight all duplicate cards
-  function selectImage(index) {
-    activeIndex = index;
-    const selected = imagesData[index];
+  // 7. Select Sample Image in Stage
+  function selectSample(index) {
+    const activeSet = setsData[currentCampaignIndex];
+    const selected = currentCampaignImages[index];
     if (!selected) return;
 
     sliderInput.value = 50;
     sliderContainer.style.setProperty("--slider-pos", "50%");
 
-    imgBefore.src = `img/${selected.id}_before.jpg`;
-    imgAfter.src = `img/${selected.id}_after.jpg`;
-    sampleTitle.textContent = selected.title || `Sample ${index + 1}`;
+    imgBefore.src = selected.before;
+    imgAfter.src = selected.after;
 
-    // Highlight card in all duplicated sets
+    sampleTitle.innerHTML = `
+      <span>${activeSet.title} (Sample ${index + 1})</span>
+      <small class="meta-info">Client: ${activeSet.client} | Photo: ${activeSet.photographer}</small>
+    `;
+
     const cards = galleryTrack.querySelectorAll(".gallery-card");
     cards.forEach((card) => {
       card.classList.toggle("active", parseInt(card.dataset.realIndex) === index);

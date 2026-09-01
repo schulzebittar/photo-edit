@@ -1,66 +1,235 @@
 [
-    {
-        "id":  "2026_04_28_GAS_HOMME6404",
-        "title":  "2026 04 28 GAS HOMME6404"
-    },
-    {
-        "id":  "2026_04_28_GAS_HOMME6447",
-        "title":  "2026 04 28 GAS HOMME6447"
-    },
-    {
-        "id":  "2026_04_28_GAS_HOMME6493",
-        "title":  "2026 04 28 GAS HOMME6493"
-    },
-    {
-        "id":  "2026_04_28_GAS_HOMME6564",
-        "title":  "2026 04 28 GAS HOMME6564"
-    },
-    {
-        "id":  "2026_04_28_GAS_HOMME6598",
-        "title":  "2026 04 28 GAS HOMME6598"
-    },
-    {
-        "id":  "2026_04_28_GAS_HOMME6623",
-        "title":  "2026 04 28 GAS HOMME6623"
-    },
-    {
-        "id":  "2026_04_28_GAS_HOMME6657",
-        "title":  "2026 04 28 GAS HOMME6657"
-    },
-    {
-        "id":  "2026_04_28_GAS_HOMME6667",
-        "title":  "2026 04 28 GAS HOMME6667"
-    },
-    {
-        "id":  "2026_04_28_GAS_HOMME6741",
-        "title":  "2026 04 28 GAS HOMME6741"
-    },
-    {
-        "id":  "2026_04_28_GAS_HOMME6782",
-        "title":  "2026 04 28 GAS HOMME6782"
-    },
-    {
-        "id":  "2026_04_28_GAS_HOMME6794",
-        "title":  "2026 04 28 GAS HOMME6794"
-    },
-    {
-        "id":  "2026_04_28_GAS_HOMME6828",
-        "title":  "2026 04 28 GAS HOMME6828"
-    },
-    {
-        "id":  "2026_04_28_GAS_HOMME6847",
-        "title":  "2026 04 28 GAS HOMME6847"
-    },
-    {
-        "id":  "2026_04_28_GAS_HOMME_21_642",
-        "title":  "2026 04 28 GAS HOMME 21 642"
-    },
-    {
-        "id":  "2026_04_28_GAS_HOMME_23_666",
-        "title":  "2026 04 28 GAS HOMME 23 666"
-    },
-    {
-        "id":  "2026_04_28_GAS_HOMME_26_717",
-        "title":  "2026 04 28 GAS HOMME 26 717"
-    }
+  {
+    "id": "01",
+    "title": "Campaign Sample 01",
+    "photographer": "Photographer Name",
+    "client": "Gas Bijoux",
+    "images": [
+      {
+        "id": "GAS BIJOUX_AW25_AMORE_0317",
+        "before": "img/comparison-sets/01/GAS BIJOUX_AW25_AMORE_0317_before.jpg",
+        "after": "img/comparison-sets/01/GAS BIJOUX_AW25_AMORE_0317_after.jpg"
+      }
+,
+      {
+        "id": "GAS BIJOUX_AW25_ATIK_0131",
+        "before": "img/comparison-sets/01/GAS BIJOUX_AW25_ATIK_0131_before.jpg",
+        "after": "img/comparison-sets/01/GAS BIJOUX_AW25_ATIK_0131_after.jpg"
+      }
+,
+      {
+        "id": "GAS BIJOUX_AW25_AVA_1097",
+        "before": "img/comparison-sets/01/GAS BIJOUX_AW25_AVA_1097_before.jpg",
+        "after": "img/comparison-sets/01/GAS BIJOUX_AW25_AVA_1097_after.jpg"
+      }
+,
+      {
+        "id": "GAS BIJOUX_AW25_ECLIPSE_0956",
+        "before": "img/comparison-sets/01/GAS BIJOUX_AW25_ECLIPSE_0956_before.jpg",
+        "after": "img/comparison-sets/01/GAS BIJOUX_AW25_ECLIPSE_0956_after.jpg"
+      }
+,
+      {
+        "id": "GAS BIJOUX_AW25_FILEA_2294",
+        "before": "img/comparison-sets/01/GAS BIJOUX_AW25_FILEA_2294_before.jpg",
+        "after": "img/comparison-sets/01/GAS BIJOUX_AW25_FILEA_2294_after.jpg"
+      }
+,
+      {
+        "id": "GAS BIJOUX_AW25_ISILDA_1109",
+        "before": "img/comparison-sets/01/GAS BIJOUX_AW25_ISILDA_1109_before.jpg",
+        "after": "img/comparison-sets/01/GAS BIJOUX_AW25_ISILDA_1109_after.jpg"
+      }
+,
+      {
+        "id": "GAS BIJOUX_AW25_SARI_2317",
+        "before": "img/comparison-sets/01/GAS BIJOUX_AW25_SARI_2317_before.jpg",
+        "after": "img/comparison-sets/01/GAS BIJOUX_AW25_SARI_2317_after.jpg"
+      }
+,
+      {
+        "id": "GAS BIJOUX_AW25_SIRENA_1156",
+        "before": "img/comparison-sets/01/GAS BIJOUX_AW25_SIRENA_1156_before.jpg",
+        "after": "img/comparison-sets/01/GAS BIJOUX_AW25_SIRENA_1156_after.jpg"
+      }
+,
+      {
+        "id": "GAS BIJOUX_AW25_SIRENE_2469",
+        "before": "img/comparison-sets/01/GAS BIJOUX_AW25_SIRENE_2469_before.jpg",
+        "after": "img/comparison-sets/01/GAS BIJOUX_AW25_SIRENE_2469_after.jpg"
+      }
+,
+      {
+        "id": "GAS BIJOUX_AW25_TAO RAINBOW_2589",
+        "before": "img/comparison-sets/01/GAS BIJOUX_AW25_TAO RAINBOW_2589_before.jpg",
+        "after": "img/comparison-sets/01/GAS BIJOUX_AW25_TAO RAINBOW_2589_after.jpg"
+      }
+    ]
+  }
+,
+  {
+    "id": "02",
+    "title": "Campaign Sample 02",
+    "photographer": "Photographer Name",
+    "client": "Gas Bijoux",
+    "images": [
+      {
+        "id": "2026_06_16_GAS_BIJOUX_FEMME_01_007",
+        "before": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_01_007_before.jpg",
+        "after": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_01_007_after.jpg"
+      }
+,
+      {
+        "id": "2026_06_16_GAS_BIJOUX_FEMME_01_048",
+        "before": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_01_048_before.jpg",
+        "after": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_01_048_after.jpg"
+      }
+,
+      {
+        "id": "2026_06_16_GAS_BIJOUX_FEMME_05_149",
+        "before": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_05_149_before.jpg",
+        "after": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_05_149_after.jpg"
+      }
+,
+      {
+        "id": "2026_06_16_GAS_BIJOUX_FEMME_08_208",
+        "before": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_08_208_before.jpg",
+        "after": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_08_208_after.jpg"
+      }
+,
+      {
+        "id": "2026_06_16_GAS_BIJOUX_FEMME_10_285",
+        "before": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_10_285_before.jpg",
+        "after": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_10_285_after.jpg"
+      }
+,
+      {
+        "id": "2026_06_16_GAS_BIJOUX_FEMME_11_301",
+        "before": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_11_301_before.jpg",
+        "after": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_11_301_after.jpg"
+      }
+,
+      {
+        "id": "2026_06_16_GAS_BIJOUX_FEMME_13_351",
+        "before": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_13_351_before.jpg",
+        "after": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_13_351_after.jpg"
+      }
+,
+      {
+        "id": "2026_06_16_GAS_BIJOUX_FEMME_17_462",
+        "before": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_17_462_before.jpg",
+        "after": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_17_462_after.jpg"
+      }
+,
+      {
+        "id": "2026_06_16_GAS_BIJOUX_FEMME_20_529",
+        "before": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_20_529_before.jpg",
+        "after": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_20_529_after.jpg"
+      }
+,
+      {
+        "id": "2026_06_16_GAS_BIJOUX_FEMME_20_567",
+        "before": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_20_567_before.jpg",
+        "after": "img/comparison-sets/02/2026_06_16_GAS_BIJOUX_FEMME_20_567_after.jpg"
+      }
+    ]
+  }
+,
+  {
+    "id": "03",
+    "title": "Campaign Sample 03",
+    "photographer": "Photographer Name",
+    "client": "Gas Bijoux",
+    "images": [
+      {
+        "id": "2026_04_28_GAS_HOMME_21_642",
+        "before": "img/comparison-sets/03/2026_04_28_GAS_HOMME_21_642_before.jpg",
+        "after": "img/comparison-sets/03/2026_04_28_GAS_HOMME_21_642_after.jpg"
+      }
+,
+      {
+        "id": "2026_04_28_GAS_HOMME_23_666",
+        "before": "img/comparison-sets/03/2026_04_28_GAS_HOMME_23_666_before.jpg",
+        "after": "img/comparison-sets/03/2026_04_28_GAS_HOMME_23_666_after.jpg"
+      }
+,
+      {
+        "id": "2026_04_28_GAS_HOMME_26_717",
+        "before": "img/comparison-sets/03/2026_04_28_GAS_HOMME_26_717_before.jpg",
+        "after": "img/comparison-sets/03/2026_04_28_GAS_HOMME_26_717_after.jpg"
+      }
+,
+      {
+        "id": "2026_04_28_GAS_HOMME6447",
+        "before": "img/comparison-sets/03/2026_04_28_GAS_HOMME6447_before.jpg",
+        "after": "img/comparison-sets/03/2026_04_28_GAS_HOMME6447_after.jpg"
+      }
+,
+      {
+        "id": "2026_04_28_GAS_HOMME6493",
+        "before": "img/comparison-sets/03/2026_04_28_GAS_HOMME6493_before.jpg",
+        "after": "img/comparison-sets/03/2026_04_28_GAS_HOMME6493_after.jpg"
+      }
+,
+      {
+        "id": "2026_04_28_GAS_HOMME6564",
+        "before": "img/comparison-sets/03/2026_04_28_GAS_HOMME6564_before.jpg",
+        "after": "img/comparison-sets/03/2026_04_28_GAS_HOMME6564_after.jpg"
+      }
+,
+      {
+        "id": "2026_04_28_GAS_HOMME6598",
+        "before": "img/comparison-sets/03/2026_04_28_GAS_HOMME6598_before.jpg",
+        "after": "img/comparison-sets/03/2026_04_28_GAS_HOMME6598_after.jpg"
+      }
+,
+      {
+        "id": "2026_04_28_GAS_HOMME6623",
+        "before": "img/comparison-sets/03/2026_04_28_GAS_HOMME6623_before.jpg",
+        "after": "img/comparison-sets/03/2026_04_28_GAS_HOMME6623_after.jpg"
+      }
+,
+      {
+        "id": "2026_04_28_GAS_HOMME6657",
+        "before": "img/comparison-sets/03/2026_04_28_GAS_HOMME6657_before.jpg",
+        "after": "img/comparison-sets/03/2026_04_28_GAS_HOMME6657_after.jpg"
+      }
+,
+      {
+        "id": "2026_04_28_GAS_HOMME6667",
+        "before": "img/comparison-sets/03/2026_04_28_GAS_HOMME6667_before.jpg",
+        "after": "img/comparison-sets/03/2026_04_28_GAS_HOMME6667_after.jpg"
+      }
+,
+      {
+        "id": "2026_04_28_GAS_HOMME6741",
+        "before": "img/comparison-sets/03/2026_04_28_GAS_HOMME6741_before.jpg",
+        "after": "img/comparison-sets/03/2026_04_28_GAS_HOMME6741_after.jpg"
+      }
+,
+      {
+        "id": "2026_04_28_GAS_HOMME6782",
+        "before": "img/comparison-sets/03/2026_04_28_GAS_HOMME6782_before.jpg",
+        "after": "img/comparison-sets/03/2026_04_28_GAS_HOMME6782_after.jpg"
+      }
+,
+      {
+        "id": "2026_04_28_GAS_HOMME6794",
+        "before": "img/comparison-sets/03/2026_04_28_GAS_HOMME6794_before.jpg",
+        "after": "img/comparison-sets/03/2026_04_28_GAS_HOMME6794_after.jpg"
+      }
+,
+      {
+        "id": "2026_04_28_GAS_HOMME6828",
+        "before": "img/comparison-sets/03/2026_04_28_GAS_HOMME6828_before.jpg",
+        "after": "img/comparison-sets/03/2026_04_28_GAS_HOMME6828_after.jpg"
+      }
+,
+      {
+        "id": "2026_04_28_GAS_HOMME6847",
+        "before": "img/comparison-sets/03/2026_04_28_GAS_HOMME6847_before.jpg",
+        "after": "img/comparison-sets/03/2026_04_28_GAS_HOMME6847_after.jpg"
+      }
+    ]
+  }
 ]

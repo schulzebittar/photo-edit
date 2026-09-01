@@ -14,46 +14,43 @@
   </header>
 
   <main class="container">
+    <h1>Photo retouching for three distinct editorial & lifestyle campaigns for Gas Bijoux</h1>
+    <p>Gas Bijoux is a French Maison of handcrafted fashion jewellery inspired by Mediterranean elements such as its light, sun, coast and sand.</p>
+
+    <!-- Campaign Picker Track (Above Stage) -->
+    <section class="campaign-picker-section">
+      <h3>Select Campaign</h3>
+      <div class="campaign-track" id="campaignTrack"></div>
+    </section>
+
     <!-- Main Comparison Stage -->
-     <h1>Photo Retouching</h1>
-    <p>A selection of photo retouching samples for three distinct editorial & lifestyle campaigns made for Gas Bijoux, a French Maison of handcrafted fashion jewellery inspired by Mediterranean elements such as its light, sun, coast and sand.</p>
     <section class="stage">
-      <h2 id="sampleTitle">Select a sample</h2>
-      
       <div class="comparison-slider" id="sliderContainer">
-        <!-- After Image (Background) -->
         <img id="imgAfter" src="" alt="Edited Photo">
-
-        <!-- Before Image (Clipped Overlay) -->
         <img id="imgBefore" src="" alt="Original Photo" class="img-before">
-
-        <!-- Slider Line & Handle -->
         <div class="slider-line" id="sliderLine">
           <div class="slider-button"></div>
         </div>
-
-        <!-- Range Input Control -->
         <input type="range" min="0" max="100" value="50" class="slider-input" id="sliderInput">
       </div>
+
+      <h2 id="sampleTitle">Select a sample</h2>
     </section>
 
-    <!-- Thumbnail Gallery -->
-     <section class="gallery-section">
-        <div class="gallery-header">
-            <h3>Samples</h3>
-            <div class="slider-controls">
-                <button id="prevBtn" class="nav-btn" aria-label="Previous">◄</button>
-                <button id="nextBtn" class="nav-btn" aria-label="Next">►</button>
-            </div>
+    <!-- Thumbnail Gallery (Samples for Active Campaign) -->
+    <section class="gallery-section">
+      <div class="gallery-header">
+        <h3 id="gallerySectionTitle">Campaign Samples</h3>
+        <div class="slider-controls">
+          <button id="prevBtn" class="nav-btn" aria-label="Previous">◄</button>
+          <button id="nextBtn" class="nav-btn" aria-label="Next">►</button>
         </div>
+      </div>
 
-    <!-- Outer container with hidden overflow -->
-        <div class="gallery-slider-wrapper" id="sliderWrapper">
-            <!-- Inner track that slides horizontally -->
-            <div class="gallery-track" id="galleryTrack"></div>
-        </div>
+      <div class="gallery-slider-wrapper" id="sliderWrapper">
+        <div class="gallery-track" id="galleryTrack"></div>
+      </div>
     </section>
-
   </main>
 
     <!-- Style Book Overlay Trigger & Panel -->
@@ -61,7 +58,7 @@
 
   <div id="styleBookOverlay" class="style-book-overlay hidden">
     <div class="style-book-content">
-      <div class="style-book-header style-book-section">
+      <div class="style-book-header">
         <h2>Global Style Book & Theme Editor</h2>
         <button id="closeStyleBook" class="close-btn">&times;</button>
       </div>

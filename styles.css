@@ -49,6 +49,71 @@ header p {
   gap: 2rem;
 }
 
+/* Campaign Picker Section */
+.campaign-picker-section {
+  width: 100%;
+}
+
+.campaign-picker-section h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  color: #64748b;
+}
+
+.campaign-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+/* Campaign Card */
+.campaign-card {
+  flex: 0 0 180px;
+  background: var(--color-secondary);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.campaign-card:hover {
+  transform: translateY(-2px);
+}
+
+.campaign-card.active {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.campaign-card-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.campaign-card-info {
+  padding: 0.5rem 0.75rem;
+}
+
+.campaign-card-title {
+  font-family: 'Lora', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  display: block;
+}
+
+.campaign-card-meta {
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
 /* Stage & Comparison Slider */
 .stage {
   background: var(--color-secondary);
@@ -57,7 +122,16 @@ header p {
 
 .stage h2 {
   font-size: 1.25rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.stage h2 .meta-info {
+  display: block;
+  font-size: 0.85rem;
+  color: #64748b;
+  font-family: Inter, sans-serif;
+  margin-top: 0.25rem;
+  font-weight: 400;
 }
 
 .comparison-slider {
